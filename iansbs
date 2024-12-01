@@ -792,7 +792,7 @@ spawner.Run = function(entityTable)
 						if localHum.Health > 0 then
 							local _, isVisible = localCamera:WorldToViewportPoint(pivot.Position)
 							if isVisible then
-							wait(1)
+							wait(0.5)
 								task.spawn(entityTable.RunCallback, entityTable, "OnLookAt", inSight) -- OnLookAt
 							end
 						end
