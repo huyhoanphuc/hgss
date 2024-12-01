@@ -792,7 +792,7 @@ spawner.Run = function(entityTable)
 						if localHum.Health > 0 then
 							local _, isVisible = localCamera:WorldToViewportPoint(pivot.Position)
 							if isVisible then
-							wait(0.7)
+							wait(0.5)
 								task.spawn(entityTable.RunCallback, entityTable, "OnLookAt", inSight) -- OnLookAt
 							end
 						end
@@ -850,7 +850,7 @@ spawner.Run = function(entityTable)
 						-- Damage detection
 						if not model:GetAttribute("Paused") and not usedCrucifix then
 							local c = config.Damage
-							if c.Enabled and c.Range > 0 and localHum.Health > 0 not and localChar:GetAttribute("Hiding") and localChar:GetAttribute("Hiding") and model:GetAttribute("Damage") and not model:GetAttribute("BeingBanished") and (charPivot.Position - pivot.Position).Magnitude <= c.Range and inSight then
+							if c.Enabled and c.Range > 0 and localHum.Health > 0 and model:GetAttribute("Damage") and not model:GetAttribute("BeingBanished") and (charPivot.Position - pivot.Position).Magnitude <= c.Range and inSight then
 								model:SetAttribute("Damage", false)
 								DamagePlayer(entityTable)
 							end
